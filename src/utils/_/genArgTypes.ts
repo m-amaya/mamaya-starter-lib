@@ -48,13 +48,13 @@ export const genArgTypesWithCommonArgs = (allProps: PropConfig[]) => ({
   ...genArgTypes(allProps),
   ...genArgTypes([
     {
-      name: "extendedCss",
+      name: "css",
       description: "(optional) CSS object for overwriting styles",
       type: "CSSObject",
       control: "object",
     },
     {
-      name: "classname",
+      name: "className",
       description:
         "(optional) Custom classname for overwriting styles. If you can, we recommend to use `extendedCss` instead.",
       type: "string",
