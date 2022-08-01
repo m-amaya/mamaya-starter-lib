@@ -13,7 +13,7 @@ function createVersionBanner(version) {
   const repeat = (c) => c.repeat(version.length);
   return `\n/*/ @preserve
     ▛▝▝▝▝▝▝▝▝▝▝▝▝▝▝▝▝▝▝▝${repeat("▝")}▜
-         Design System v${version}
+      Design System v${version}
     ▙ ▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖${repeat("▖")}▟
                        ${repeat(" ")}By Marissa Amaya
     Created Using:
