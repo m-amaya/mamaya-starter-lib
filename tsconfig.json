@@ -29,7 +29,7 @@
     "baseUrl": "src",
     "paths": {
       "~/*": ["./*"],
-      "~/stitches": ["stitches.config.ts"],
+      "~/stitches": ["styles/stitches.config.ts"],
       "~/types": ["@types/types.ts"]
     }
   },
