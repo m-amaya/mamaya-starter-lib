@@ -1,0 +1,35 @@
+name: Build Celeritas
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "src/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACTION_TOKEN }}
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.3.0
+        with:
+          node-version: current
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build library
+        run: yarn build
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9.0.1
+        with:
+          default_author: github_actions
+          message: "automatic build"
+          add: "."
