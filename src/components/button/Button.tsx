@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { styled } from "~/stitches";
 
-import type { ComponentProps } from "./Button.types";
+import type { ButtonProps } from "./Button.types";
 
 const ButtonStyled = styled("button");
 
-const Button: FC<ComponentProps> = ({
+const Button: FC<ButtonProps> = ({
   // props
   // handlers
   // common
