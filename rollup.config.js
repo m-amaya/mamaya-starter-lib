@@ -5,19 +5,17 @@ import url from "@rollup/plugin-url";
 import svgr from "@svgr/rollup";
 import React from "react";
 import ReactDOM from "react-dom";
-import copy from "rollup-plugin-copy";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "rollup-plugin-typescript2";
-
-const pkg = require("../../lightspeed/celeritas/package.json");
+import pkg from "./package.json";
 
 function createVersionBanner(version) {
   const repeat = (c) => c.repeat(version.length);
   return `\n/*/ @preserve
     ▛▝▝▝▝▝▝▝▝▝▝▝▝▝▝▝▝▝▝▝${repeat("▝")}▜
-         Celeritas v${version}
+         Design System v${version}
     ▙ ▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖${repeat("▖")}▟
-                       ${repeat(" ")}By Lightspeed Systems
+                       ${repeat(" ")}By Marissa Amaya
     Created Using:
       - React version ${React.version}
       - ReactDOM version ${ReactDOM.version}
@@ -63,12 +61,6 @@ export default {
         },
       },
       useTsconfigDeclarationDir: true,
-    }),
-    copy({
-      targets: [
-        { src: "src/tokens/icons/svg/*", dest: "dist/icons" },
-        { src: "src/tokens/logos/svg/*", dest: "dist/logos" },
-      ],
     }),
   ],
 };

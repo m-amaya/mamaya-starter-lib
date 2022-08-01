@@ -1,4 +1,4 @@
-name: Build Celeritas
+name: Build Design System
 
 on:
   push:
